@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swimming Sports 2025 sign up</title>
+  <link rel="stylesheet" href="stylesheet.css"> <!-- This now handles nav overlay styles -->
+  
+
+
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="#home">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    </a>
+  </div>
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html">Home Page</a>
+      <a href="infopage.html">Infomation</a>
+      <a href="infopage.html">Gallery</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+
+  </div>
+
+  <div class="content">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #474e5d;
+  padding-top: 0px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+
+/* ✅ Squircle-style checkbox container */
+.option-group {
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+/* Optional: spacing and block layout for checkboxes */
+.option-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+</style>
+<body style="background-color:#469ae8;">
+
+
+
+<form class="modal-content" action="https://formsubmit.io/rileyshorttsmith@camhigh.school.nz" method="POST">
+<input type="hidden" name="_captcha" value="false">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to sign up for a event.</p>
+      <hr>
+      
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" required>
+
+      <b>Pick an year level</b>
+<div class="option-group">
+  <label><input type="radio" name="yearlevel" value="yr9" checked> yr 9</label>
+  <label><input type="radio" name="yearlevel" value="yr10"> yr 10</label>
+  <label><input type="radio" name="yearlevel" value="yr11"> yr 11</label>
+  <label><input type="radio" name="yearlevel" value="yr12"> yr 12</label>
+  <label><input type="radio" name="yearlevel" value="yr13"> yr 13</label>
+</div>
+
+
+      <b>Pick an event</b>
+      <div class="option-group">
+        <label><input type="checkbox" name="event1" checked> One</label>
+        <label><input type="checkbox" name="event2"> Two</label>
+        <label><input type="checkbox" name="event3"> Three</label>
+        <label><input type="checkbox" name="event4"> Four</label>
+      </div>
+
+
+
+<div style="text-align: center; margin-top: 20px;">
+  <button type="submit" class="signupbtn" style="width: 400px;">Sign Up</button>
+</div>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+
+
+  </div>
+
+   <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+  </script>
+</body>
+</body>
+</html>
