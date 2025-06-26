@@ -2,13 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Swimming Sports 2025 sign up</title>
-  <link rel="stylesheet" href="stylesheet.css"> <!-- This now handles nav overlay styles -->
-  
+  <title>Swimming Sports 2025 Sign Up</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #469ae8;
+      padding-top: 60px;
+    }
 
+    input[type=text], input[type=email], textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
 
+    input[type=text]:focus, input[type=email]:focus, textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    button:hover {
+      opacity: 1;
+    }
+
+    .content {
+      padding: 16px;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .option-group {
+      background-color: #e0e0e0;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .option-group label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1002;
+      overflow: hidden;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .overlay {
+      height: 0%;
+      width: 100%;
+      position: fixed;
+      z-index: 1001;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0, 0.9);
+      overflow-y: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 50px;
+      right: 45px;
+      font-size: 60px;
+    }
+  </style>
 </head>
 <body>
+
   <div class="topnav">
     <a class="active" href="#home">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
@@ -19,163 +140,44 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <a href="index.html">Home Page</a>
-      <a href="infopage.html">Infomation</a>
-      <a href="infopage.html">Gallery</a>
+      <a href="infopage.html">Information</a>
+      <a href="gallery.html">Gallery</a>
       <a href="signup.html">Sign Up</a>
     </div>
-
   </div>
 
   <div class="content">
+    <h2 style="text-align:center;">Swimming Sports 2025 Sign Up</h2>
 
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+    <form action="https://getform.io/f/aolowomb" method="POST">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Any other info?" required></textarea>
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-
-.container {
-  padding: 16px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #474e5d;
-  padding-top: 0px;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-
-/* ✅ Squircle-style checkbox container */
-.option-group {
-  background-color: #e0e0e0;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 20px 0;
-}
-
-/* Optional: spacing and block layout for checkboxes */
-.option-group label {
-  display: block;
-  margin-bottom: 10px;
-}
-</style>
-<body style="background-color:#469ae8;">
-
-
-
-<form action="https://getform.io/f/aolowomb" method="POST">
-  <input type="text" name="name" placeholder="Your name" required>
-  <input type="email" name="email" placeholder="Your email" required>
-  <textarea name="message" placeholder="Your message" required></textarea>
-  <button type="submit">Submit</button>
-
-      <b>Pick an year level</b>
-<div class="option-group">
-  <label><input type="radio" name="yearlevel" value="yr9" checked> yr 9</label>
-  <label><input type="radio" name="yearlevel" value="yr10"> yr 10</label>
-  <label><input type="radio" name="yearlevel" value="yr11"> yr 11</label>
-  <label><input type="radio" name="yearlevel" value="yr12"> yr 12</label>
-  <label><input type="radio" name="yearlevel" value="yr13"> yr 13</label>
-</div>
-
-
-      <b>Pick an event</b>
+      <b>Pick a year level</b>
       <div class="option-group">
-        <label><input type="checkbox" name="event1" checked> One</label>
-        <label><input type="checkbox" name="event2"> Two</label>
-        <label><input type="checkbox" name="event3"> Three</label>
-        <label><input type="checkbox" name="event4"> Four</label>
+        <label><input type="radio" name="yearlevel" value="yr9" checked> yr 9</label>
+        <label><input type="radio" name="yearlevel" value="yr10"> yr 10</label>
+        <label><input type="radio" name="yearlevel" value="yr11"> yr 11</label>
+        <label><input type="radio" name="yearlevel" value="yr12"> yr 12</label>
+        <label><input type="radio" name="yearlevel" value="yr13"> yr 13</label>
       </div>
 
+      <b>Pick events</b>
+      <div class="option-group">
+        <label><input type="checkbox" name="event1" value="one" checked> One</label>
+        <label><input type="checkbox" name="event2" value="two"> Two</label>
+        <label><input type="checkbox" name="event3" value="three"> Three</label>
+        <label><input type="checkbox" name="event4" value="four"> Four</label>
+      </div>
 
-
-<div style="text-align: center; margin-top: 20px;">
-  <button type="submit" class="signupbtn" style="width: 400px;">Sign Up</button>
-</div>
-    </div>
-  </form>
-</div>
-
-<script>
-var modal = document.getElementById('id01');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-</body>
-
-
+      <div style="text-align: center;">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
   </div>
 
-   <script>
+  <script>
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
@@ -184,6 +186,6 @@ window.onclick = function(event) {
       document.getElementById("myNav").style.height = "0%";
     }
   </script>
-</body>
+
 </body>
 </html>
