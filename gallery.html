@@ -1,42 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Swimming Sports 2025 gallery</title>
-  <link rel="stylesheet" href="stylesheet.css"> <!-- This now handles nav overlay styles -->
+  <meta charset="UTF-8" />
+  <title>Swimming Sports 2025 Gallery</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding-top: 50px;
+      background: #f0f0f0;
+      color: #333;
+    }
 
+    /* Top navigation bar */
+    .topnav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 1002;
+      overflow: hidden;
+    }
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    /* Overlay nav */
+    .overlay {
+      height: 0%;
+      width: 100%;
+      position: fixed;
+      z-index: 1001;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0, 0.9);
+      overflow-y: hidden;
+      transition: 0.5s;
+    }
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    .overlay a:hover,
+    .overlay a:focus {
+      color: #f1f1f1;
+    }
+    .overlay .closebtn {
+      position: absolute;
+      top: 50px;
+      right: 45px;
+      font-size: 60px;
+      cursor: pointer;
+    }
+    @media screen and (max-height: 450px) {
+      .overlay a {
+        font-size: 20px;
+      }
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
+
+    /* Carousel container */
+    .carousel {
+      position: relative;
+      max-width: 700px;
+      margin: 60px auto 40px auto; /* margin top includes nav height */
+      overflow: hidden;
+      border: 2px solid #333;
+      border-radius: 8px;
+      background: #000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Slide wrapper */
+    .slides {
+      position: relative;
+      height: 400px;
+    }
+
+    /* Each slide image */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Arrow buttons */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.3);
+      border: none;
+      color: white;
+      font-size: 36px;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+    .arrow:hover {
+      background-color: rgba(255,255,255,0.8);
+    }
+    .left-arrow {
+      left: 10px;
+    }
+    .right-arrow {
+      right: 10px;
+    }
+
+    /* Content below carousel */
+    .content {
+      max-width: 700px;
+      margin: 0 auto 60px auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Top nav with overlay menu button -->
   <div class="topnav">
     <a class="active" href="#home">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     </a>
   </div>
 
+  <!-- Overlay navigation menu -->
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-       <div class="overlay-content">
+    <div class="overlay-content">
       <a href="index.html">Home Page</a>
-      <a href="infopage.html">Infomation</a>
+      <a href="infopage.html">Information</a>
       <a href="gallery.html">Gallery</a>
       <a href="signup.html">Sign Up</a>
     </div>
-
   </div>
 
+  <!-- Carousel -->
+  <div class="carousel" id="carousel">
+    <button class="arrow left-arrow" onclick="prevSlide()">&#10094;</button>
+
+    <div class="slides">
+      <img src="images/image1.jpg" alt="Image 1" class="slide active" />
+      <img src="images/image2.jpg" alt="Image 2" class="slide" />
+      <img src="images/image3.jpg" alt="Image 3" class="slide" />
+      <!-- Add your images here by copying the line above and updating src and alt -->
+    </div>
+
+    <button class="arrow right-arrow" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <!-- Some page content below carousel -->
   <div class="content">
-    <h2>words words words</h2>
-    <p>smaller words.</p>
+    <h2>Welcome to the Swimming Sports 2025 Gallery</h2>
+    <p>Enjoy the carousel showing highlights from our swimming events.</p>
   </div>
 
   <script>
+    // Overlay menu open/close
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
     }
-
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
+
+    // Carousel logic
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+    let slideInterval;
+    const slideDuration = 3500; // ms
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      let next = currentSlide + 1;
+      if (next >= slides.length) next = 0; // loop back
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      let prev = currentSlide - 1;
+      if (prev < 0) prev = slides.length - 1; // loop back
+      showSlide(prev);
+    }
+
+    function startAutoplay() {
+      slideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    function stopAutoplay() {
+      clearInterval(slideInterval);
+    }
+
+    const carousel = document.getElementById("carousel");
+    carousel.addEventListener("mouseenter", stopAutoplay);
+    carousel.addEventListener("mouseleave", startAutoplay);
+
+    // Start carousel on page load
+    showSlide(0);
+    startAutoplay();
   </script>
+
 </body>
 </html>
