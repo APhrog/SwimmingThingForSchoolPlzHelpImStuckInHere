@@ -5,56 +5,59 @@
   <title>Swimming Sports 2025 Sign Up</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-  body {
-    padding-top: 60px;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-  }
+    body {
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+      background-color: black;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
 
- body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('placeholderimage1.webp'); /* ✅ Add this line */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: fadeBackground 90s infinite;
-  z-index: -1;
-}
-
-
-  @keyframes fadeBackground {
-    0%, 25% {
-      opacity: 1;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-image: url('placeholderimage1.webp');
-    }
-    30%, 50% {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fadeBackground 90s infinite;
+      z-index: -1;
       opacity: 1;
-      background-image: url('placeholderimage2.webp');
+      transition: opacity 1s ease-in-out;
     }
-    55%, 75% {
-      opacity: 1;
-      background-image: url('placeholderimage3.webp');
-    }
-    80%, 100% {
-      opacity: 1;
-      background-image: url('placeholderimage1.webp');
-    }
-  }
 
-  input[type=text],
-  input[type=email],
-  textarea {
-    width: 100%;
-    padding: 10px;
-  }
+    @keyframes fadeBackground {
+      0%, 25% {
+        background-image: url('placeholderimage1.webp');
+      }
+      30%, 50% {
+        background-image: url('placeholderimage2.webp');
+      }
+      55%, 75% {
+        background-image: url('placeholderimage3.webp');
+      }
+      80%, 100% {
+        background-image: url('placeholderimage1.webp');
+      }
+    }
+
+    input[type=text],
+    input[type=email],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
     button {
       background-color: #04AA6D;
@@ -64,11 +67,12 @@
       border: none;
       cursor: pointer;
       width: 100%;
-      opacity: 0.9;
+      font-size: 16px;
+      border-radius: 6px;
     }
 
     button:hover {
-      opacity: 1;
+      opacity: 0.9;
     }
 
     .content {
@@ -181,9 +185,8 @@
     <h2 style="text-align:center;">Swimming Sports 2025 Sign Up</h2>
 
     <form action="https://getform.io/f/aolowomb" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-
+      <input type="text" name="name" placeholder="Enter your full name" required>
+      <input type="email" name="email" placeholder="Enter your email address" required>
 
       <b>Pick a year level</b>
       <div class="option-group">
