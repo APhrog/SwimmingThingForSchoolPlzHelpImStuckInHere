@@ -5,26 +5,25 @@
   <title>Swimming Sports 2025 Sign Up</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
+    .background {
+      position: fixed;
+      top: 0;  
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      transition: opacity 1s ease-in-out;
+    }
 
-.background {
-  position: fixed;
-  top: 0;  
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  transition: opacity 1s ease-in-out;
-}
-
-.bg1, .bg2 {
-  opacity: 0;
-}
-.bg1.visible, .bg2.visible {
-  opacity: 1;
-}
+    .bg1, .bg2 {
+      opacity: 0;
+    }
+    .bg1.visible, .bg2.visible {
+      opacity: 1;
+    }
 
     body {
       padding-top: 60px;
@@ -35,7 +34,6 @@
       position: relative;
     }
 
-    
     input[type=text],
     input[type=email],
     textarea {
@@ -154,10 +152,12 @@
   </style>
 </head>
 <body>
-<div class="background bg1 visible" id="bg1"></div>
-<div class="background bg2" id="bg2"></div>
 
+  <!-- Background layers -->
+  <div class="background bg1 visible" id="bg1" style="background-image: url('placeholderimage2.webp');"></div>
+  <div class="background bg2" id="bg2"></div>
 
+  <!-- Navigation -->
   <div class="topnav">
     <a class="active" href="#home">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
@@ -174,6 +174,7 @@
     </div>
   </div>
 
+  <!-- Main content -->
   <div class="content">
     <h2 style="text-align:center;">Swimming Sports 2025 Sign Up</h2>
 
@@ -204,6 +205,7 @@
     </form>
   </div>
 
+  <!-- JS for nav and background cycle -->
   <script>
     function openNav() {
       document.getElementById("myNav").style.height = "100%";
@@ -212,34 +214,32 @@
     function closeNav() {
       document.getElementById("myNav").style.height = "0%";
     }
+
+    const images = [
+      'placeholderimage2.webp',
+      'placeholderimage3.webp',
+      'placeholderimage4.webp'
+    ];
+    let index = 0;
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+    let showingFirst = true;
+
+    function changeBackground() {
+      index = (index + 1) % images.length;
+      const nextImage = images[index];
+      const fadeOut = showingFirst ? bg1 : bg2;
+      const fadeIn = showingFirst ? bg2 : bg1;
+
+      fadeIn.style.backgroundImage = `url(${nextImage})`;
+      fadeIn.classList.add('visible');
+      fadeOut.classList.remove('visible');
+
+      showingFirst = !showingFirst;
+    }
+
+    setInterval(changeBackground, 15000);
   </script>
-<script>
-  const images = [
-    'placeholderimage1.webp',
-    'placeholderimage2.webp',
-    'placeholderimage3.webp'
-  ];
-  let index = 0;
-  const bg1 = document.getElementById('bg1');
-  const bg2 = document.getElementById('bg2');
-  let showingFirst = true;
-
-  function changeBackground() {
-    const nextImage = images[index % images.length];
-    const fadeOut = showingFirst ? bg1 : bg2;
-    const fadeIn = showingFirst ? bg2 : bg1;
-
-    fadeIn.style.backgroundImage = `url(${nextImage})`;
-    fadeIn.classList.add('visible');
-    fadeOut.classList.remove('visible');
-
-    showingFirst = !showingFirst;
-    index++;
-  }
-
-  // start the loop
-  setInterval(changeBackground, 15000); // every 15 sec
-</script>
 
 </body>
 </html>
